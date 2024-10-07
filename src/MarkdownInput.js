@@ -1,9 +1,18 @@
+import { MarkdownContext } from "./App";
+import {useContext} from "react";
 
 
 function MarkdownInput(props){
-    return <textarea id="editor">
+    
+    const [text, setText] = useContext(MarkdownContext);
 
-    </textarea>
+    function handleInput(e){
+        setText(e.target.value)
+    }
+
+    return <MarkdownContext.Provider value={[text, setText]}>
+            <textarea id="editor" onChange={handleInput} value={text}></textarea>
+        </MarkdownContext.Provider>
 }
 
 export default MarkdownInput

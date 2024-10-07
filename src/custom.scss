@@ -11,6 +11,14 @@ $theme-colors: (
     "danger":     #f91900,
 );
 
-$body-bg: #3974ef;
+$body-bg: #dddcdc;
 
 @import "~bootstrap/scss/bootstrap.scss";
+
+img, a{
+    display: block;
+}
+
+img{
+    width: 200px;
+}
